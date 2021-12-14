@@ -8,7 +8,7 @@ body {
   font-family: "游ゴシック", YuGothic, "メイリオ", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #000000;
+  color: #333;
 }
 
 img {
@@ -80,4 +80,8 @@ select {
   position: relative;
   z-index: 0;
   background: #fff;
+}
+
+header {
+  position: relative;
 }

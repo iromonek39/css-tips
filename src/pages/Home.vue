@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <div class="home">
-      <Btn/>
+      <Btn
+        :color="'blue'"
+        :label="'あります'"/>
       <CardList/>
 
       <div v-html="userInputData"/>

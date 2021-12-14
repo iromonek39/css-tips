@@ -2,9 +2,10 @@
   <div class="button">
     <!-- ボタン -->
     <button
-      class="btn btn--blue"
+      :class="`btn--${color}`"
+      class="btn"
       @click="linkTo('login')">
-      <span class="btn__txt">あります</span>
+      <span class="btn__txt">{{ label }}</span>
     </button>
   </div>
 </template>
@@ -25,6 +26,16 @@ export default {
   data () {
     return {
       setting
+    }
+  },
+  props: {
+    color: {
+      type: String,
+      default: ''
+    },
+    label: {
+      type: String,
+      default: ''
     }
   },
   methods: {

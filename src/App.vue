@@ -1,6 +1,22 @@
 <template>
   <div id="app">
-    <Header/>
+    <header>
+      <MenuBtn
+        :is-active-menu="isActiveMenu"
+        @click.native="toggleHeaderMenu"/>
+      <Header/>
+      <transition-group
+        name="fade"
+        tag="div">
+        <HambMenu
+          v-if="isActiveMenu"
+          key="menu"/>
+        <div
+          v-if="isActiveMenu"
+          key="bg"
+          class="menu__bg"/>
+      </transition-group>
+    </header>
     <keep-alive>
       <router-view/>
     </keep-alive>
@@ -11,7 +27,9 @@
 import { mapGetters } from 'vuex'
 import Reset from '@/assets/css/reset.css'
 import Default from '@/assets/css/default.css'
-import Header from '@/components/header'
+import Header from '@/components/Header'
+import MenuBtn from '@/components/MenuBtn'
+import HambMenu from '@/components/HambMenu'
 import setting from '@/setting'
 
 export default {
@@ -20,11 +38,14 @@ export default {
     mapGetters,
     Reset,
     Default,
-    Header
+    Header,
+    MenuBtn,
+    HambMenu
   },
   data () {
     return {
-      setting
+      setting,
+      isActiveMenu: false
     }
   },
   computed: {
@@ -61,11 +82,15 @@ export default {
       }, err => {
         console.log('getType err res', err)
       })
+    },
+    toggleHeaderMenu () {
+      this.isActiveMenu = !this.isActiveMenu
     }
   },
   created () {
   },
   mounted () {
+    this.isActiveMenu = false
     // this.handleResize()
     // window.addEventListener('resize', this.handleResize)
     if (process.env.CLIENT_ENV !== 'production') {
@@ -87,4 +112,22 @@ export default {
 <style lang="postcss" scoped>
   @import './assets/css/mixins.css';
   @import './assets/css/variables.css';
+
+  .menu {
+    &__bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.6);
+      z-index: 11;
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .3s;
+  }
+
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
 </style>

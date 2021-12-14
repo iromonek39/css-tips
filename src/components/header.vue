@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <nav class="header__nav">
     <div class="header__inner">
       <div class="header__left">
         <h1>
@@ -10,22 +10,19 @@
           <span class="clinic-name">タイトル</span>
         </h1>
       </div>
-      <HamburgMenu/>
     </div>
-  </header>
+  </nav>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import setting from '@/setting.js'
-import HamburgMenu from '@/components/HamburgMenu'
 
 export default {
   name: '',
   components: {
     setting,
-    mapGetters,
-    HamburgMenu
+    mapGetters
   },
   computed: {
     ...mapGetters([])
@@ -55,14 +52,16 @@ export default {
 @import '../assets/css/variables.css';
 
 .header {
-  position: fixed;
-  width: 100%;
-  height: 80px;
-  background: #1880DF;
-  z-index: 10;
+  &__nav {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    z-index: 10;
 
-  @media screen and (max-width: 767px) {
-    height: 60px;
+    @media screen and (max-width: 767px) {
+      height: 60px;
+    }
   }
 
   &__inner {
