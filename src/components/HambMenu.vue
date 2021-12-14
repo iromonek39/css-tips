@@ -59,8 +59,7 @@ export default {
 
   @media screen and (max-width: 767px) {
     width: 100%;
-    height: 100vh;
-    top: 60px;
+    height: var(--vh);
   }
 
   &__list {

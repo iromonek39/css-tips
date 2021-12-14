@@ -41,3 +41,11 @@ const application = new Vue({
 document.addEventListener('DOMContentLoaded', function () {
   application.$mount('#app')
 })
+
+// ヘッダー内メニューの高さ
+const setFillHeight = () => {
+  const vh = window.innerHeight
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+}
+window.addEventListener('resize', setFillHeight)
+setFillHeight()

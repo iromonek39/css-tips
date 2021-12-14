@@ -3,7 +3,7 @@
     <div class="card-list__inner">
       <div class="card-list__thumb">
         <img
-          src="../assets/img/bg.png"
+          src="@/assets/img/bg.png"
           alt="サムネイル">
       </div>
       <div class="card-list__main">
@@ -13,7 +13,7 @@
     <div class="card-list__inner">
       <div class="card-list__thumb">
         <img
-          src="../assets/img/bg.png"
+          src="@/assets/img/bg.png"
           alt="サムネイル">
       </div>
       <div class="card-list__main">
@@ -23,7 +23,7 @@
     <div class="card-list__inner">
       <div class="card-list__thumb">
         <img
-          src="../assets/img/bg.png"
+          src="@/assets/img/bg.png"
           alt="サムネイル">
       </div>
       <div class="card-list__main">
@@ -33,7 +33,7 @@
     <div class="card-list__inner">
       <div class="card-list__thumb">
         <img
-          src="../assets/img/bg.png"
+          src="@/assets/img/bg.png"
           alt="サムネイル">
       </div>
       <div class="card-list__main">

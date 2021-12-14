@@ -63,6 +63,14 @@ export default {
       cursor: pointer;
       z-index: 999;
 
+      @media screen and (max-width: 767px) {
+        width: 60px;
+        height: 60px;
+        margin-top: 8px;
+        background: #eedcb3;
+        border-radius: 50%;
+      }
+
       &-inner {
         position: relative;
         top: -7px;
@@ -72,6 +80,10 @@ export default {
           content: 'MENU';
           color: #333;
           transform: translate(-50%, 15px);
+
+          @media screen and (max-width: 767px) {
+            font-size: 10px;
+          }
         }
 
         & .bar {
@@ -81,6 +93,10 @@ export default {
           background: #333;
           transform: translateX(-50%);
           transition: .3s cubic-bezier(0, .45, .47, 1);
+
+          @media screen and (max-width: 767px) {
+            width: 25px;
+          }
 
           &--top {
             top: -11px;

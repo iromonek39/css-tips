@@ -4,7 +4,8 @@
       <div class="header__left">
         <h1>
           <img
-            src="../assets/img/logo.png"
+            v-if="getUserAgent() === 'PC'"
+            src="@/assets/img/logo.png"
             alt="ロゴ"
             class="logo">
           <span class="header__title">タイトル</span>
@@ -53,12 +54,7 @@ export default {
     position: fixed;
     width: 100%;
     height: 80px;
-    background: #fff;
     z-index: 10;
-
-    @media screen and (max-width: 767px) {
-      height: 60px;
-    }
   }
 
   &__inner {

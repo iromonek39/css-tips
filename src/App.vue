@@ -20,6 +20,7 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <Footer/>
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import { mapGetters } from 'vuex'
 import Reset from '@/assets/css/reset.css'
 import Default from '@/assets/css/default.css'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import MenuBtn from '@/components/MenuBtn'
 import HambMenu from '@/components/HambMenu'
 import setting from '@/setting'
@@ -39,6 +41,7 @@ export default {
     Reset,
     Default,
     Header,
+    Footer,
     MenuBtn,
     HambMenu
   },

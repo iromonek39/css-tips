@@ -12,6 +12,14 @@ export default {
   },
   methods: {
     ...mapActions([]),
+    getUserAgent () {
+      // TODO: PC・SP判定一時的に作りました
+      if (navigator.userAgent.match(/iPhone|Android.+Mobile/)) {
+        return 'SP'
+      } else {
+        return 'PC'
+      }
+    },
     linkTo (path) {
       switch (path) {
         case 'login':

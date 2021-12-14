@@ -1,13 +1,10 @@
 <template>
-  <div class="button">
-    <!-- ボタン -->
-    <button
-      :class="`btn--${color}`"
-      class="btn"
-      @click="linkTo('login')">
-      <span class="btn__txt">{{ label }}</span>
-    </button>
-  </div>
+  <button
+    :class="`btn--${color}`"
+    class="btn"
+    @click="linkTo('login')">
+    <span class="btn__txt">{{ label }}</span>
+  </button>
 </template>
 
 <script>
@@ -56,16 +53,13 @@ export default {
 <style lang="postcss" scoped>
 @import '../assets/css/mixins.css';
 @import '../assets/css/variables.css';
-.button {
-  margin-top: 10px;
-}
 
 .btn {
   width: 300px;
   max-width: 240px;
   padding: 8px 60px;
-  margin: 0 auto;
-  border-radius: 20px;
+  margin: 0 auto 42px;
+  border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -74,16 +68,12 @@ export default {
   &--blue {
     background: #1880df;
     color: #fff;
-    margin-bottom: 42px;
-
-    @media screen and (max-width: 767px) {
-      margin-bottom: 32px;
-    }
   }
 
   &--white {
     background: #fff;
-    color: #1880df;
+    border: 2px solid #333;
+    color: #333;
   }
 }
 </style>
