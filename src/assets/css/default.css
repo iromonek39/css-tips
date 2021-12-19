@@ -79,14 +79,11 @@ select {
 
 #app .main {
   position: relative;
+  padding: 80px 20px 0;
   background: #fff;
   overflow-y: auto;
   overflow-scrolling: touch;
   z-index: 0;
-
-  @media screen and (max-width: 767px) {
-    padding: 0 20px;
-  }
 }
 
 header {
@@ -99,6 +96,7 @@ header {
 
   @media screen and (max-width: 767px) {
     background: inherit;
+    box-shadow: none;
   }
 }
 

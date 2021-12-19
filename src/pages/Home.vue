@@ -1,18 +1,26 @@
 <template>
   <div class="main">
     <div class="home">
-      <h2 class="section-title">ボタン</h2>
-      <div class="btn-wrapper">
-        <Btn
-          :color="'white'"
-          :label="'はい'"
-          @click.native="openModal"/>
-        <Btn
-          :color="'blue'"
-          :label="'いいえ'"/>
-      </div>
-      <h2 class="section-title">カード</h2>
-      <CardList/>
+      <section>
+        <h2 class="section-title">ボタン</h2>
+        <div class="btn-wrapper">
+          <Btn
+            :color="'white'"
+            :label="'はい'"
+            @click.native="openModal"/>
+          <Btn
+            :color="'blue'"
+            :label="'いいえ'"/>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">カード</h2>
+        <CardList/>
+      </section>
+      <section>
+        <h2 class="section-title">ニュース</h2>
+        <NewsList/>
+      </section>
     </div>
   </div>
 </template>
@@ -22,6 +30,7 @@ import { mapGetters } from 'vuex'
 import setting from '@/setting.js'
 import Btn from '@/components/Btn'
 import CardList from '@/components/CardList'
+import NewsList from '@/components/NewsList'
 
 export default {
   name: 'Home',
@@ -29,7 +38,8 @@ export default {
     setting,
     mapGetters,
     Btn,
-    CardList
+    CardList,
+    NewsList
   },
   computed: {
     ...mapGetters(['hogeData'])

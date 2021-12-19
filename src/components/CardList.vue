@@ -113,6 +113,10 @@ export default {
     a {
       display: block;
     }
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
   &__thumb {
