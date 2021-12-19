@@ -1,43 +1,25 @@
 <template>
   <div class="card-list">
-    <div class="card-list__inner">
+    <div
+      v-for="(item, index) in card"
+      :key="index"
+      class="card-list__inner">
       <div class="card-list__thumb">
         <img
-          src="@/assets/img/bg.png"
-          alt="サムネイル">
+          :src="item.img"
+          :alt="item.title">
       </div>
       <div class="card-list__main">
-        <p class="card-list__txt">テキストテキストテキストテキストテキストテキストテキスト</p>
+        <h2 class="card-list__ttl">{{ item.ttl }}</h2>
+        <p class="card-list__txt">{{ item.txt }}</p>
       </div>
-    </div>
-    <div class="card-list__inner">
-      <div class="card-list__thumb">
-        <img
-          src="@/assets/img/bg.png"
-          alt="サムネイル">
-      </div>
-      <div class="card-list__main">
-        <p class="card-list__txt">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-      </div>
-    </div>
-    <div class="card-list__inner">
-      <div class="card-list__thumb">
-        <img
-          src="@/assets/img/bg.png"
-          alt="サムネイル">
-      </div>
-      <div class="card-list__main">
-        <p class="card-list__txt">テキストテキストテキストテキストテキストテキストテキスト</p>
-      </div>
-    </div>
-    <div class="card-list__inner">
-      <div class="card-list__thumb">
-        <img
-          src="@/assets/img/bg.png"
-          alt="サムネイル">
-      </div>
-      <div class="card-list__main">
-        <p class="card-list__txt">テキストテキストテキストテキストテキストテキストテキスト</p>
+      <div class="card-list__label-wrapper">
+        <div
+          v-for="(label, index) in item.labels"
+          :key="index"
+          class="card-list__label">
+          {{ label }}
+        </div>
       </div>
     </div>
   </div>
@@ -58,7 +40,39 @@ export default {
   },
   data () {
     return {
-      setting
+      setting,
+      card: [
+        {
+          img: require('@/assets/img/bg.png'),
+          ttl: 'タイトル',
+          txt: 'テキストテキストテキストテキストテキストテキストテキスト',
+          labels: ['ラベル', 'ラベル']
+        },
+        {
+          img: require('@/assets/img/bg.png'),
+          ttl: 'タイトル',
+          txt: 'テキストテキストテキストテキストテキストテキストテキスト',
+          labels: ['ラベル', 'ラベル']
+        },
+        {
+          img: require('@/assets/img/bg.png'),
+          ttl: 'タイトル',
+          txt: 'テキストテキストテキストテキストテキストテキストテキスト',
+          labels: ['ラベル', 'ラベル']
+        },
+        {
+          img: require('@/assets/img/bg.png'),
+          ttl: 'タイトル',
+          txt: 'テキストテキストテキストテキストテキストテキストテキスト',
+          labels: ['ラベル', 'ラベル']
+        },
+        {
+          img: require('@/assets/img/bg.png'),
+          ttl: 'タイトル',
+          txt: 'テキストテキストテキストテキストテキストテキストテキスト',
+          labels: ['ラベル', 'ラベル']
+        }
+      ]
     }
   },
   methods: {
@@ -82,9 +96,9 @@ export default {
 
 .card-list {
   display: grid;
-  gap: 10px 20px;
+  gap: 20px;
   grid-auto-rows: minmax(60px, auto);
-  grid-template-columns: repeat(auto-fit, minmax(293px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
   &__inner {
     box-sizing: border-box;
@@ -93,10 +107,33 @@ export default {
 
   &__thumb {
     width: 100%;
+    margin-bottom: 24px;
 
     & img {
       width: 100%;
       height: auto;
+    }
+  }
+
+  &__main {
+    margin-bottom: 10px;
+  }
+
+  &__ttl {
+    margin-bottom: 4px;
+  }
+
+  &__label {
+    padding: 0 14px;
+    margin-bottom: 7px;
+    border: 1px solid #eedcb3;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #edb53d;
+
+    &-wrapper {
+      display: flex;
+      gap: 4px;
     }
   }
 }

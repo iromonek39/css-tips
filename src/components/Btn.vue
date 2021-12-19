@@ -58,8 +58,9 @@ export default {
   width: 300px;
   max-width: 240px;
   padding: 8px 60px;
-  margin: 0 auto 42px;
+  margin: 0 8px 42px;
   border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;

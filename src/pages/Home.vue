@@ -5,10 +5,11 @@
       <div class="btn-wrapper">
         <Btn
           :color="'white'"
-          :label="'あります'"/>
+          :label="'はい'"
+          @click.native="openModal"/>
         <Btn
           :color="'blue'"
-          :label="'あります'"/>
+          :label="'いいえ'"/>
       </div>
       <h2 class="section-title">カード</h2>
       <CardList/>
@@ -39,6 +40,9 @@ export default {
     }
   },
   methods: {
+    openModal () {
+      console.log(1)
+    }
   },
   mounted () {
   },
