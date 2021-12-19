@@ -1,8 +1,7 @@
 <template>
   <button
     :class="`btn--${color}`"
-    class="btn"
-    @click="linkTo('login')">
+    class="btn">
     <span class="btn__txt">{{ label }}</span>
   </button>
 </template>
