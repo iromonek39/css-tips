@@ -4,23 +4,25 @@
       v-for="(item, index) in card"
       :key="index"
       class="card-list__inner">
-      <div class="card-list__thumb">
-        <img
-          :src="item.img"
-          :alt="item.title">
-      </div>
-      <div class="card-list__main">
-        <h2 class="card-list__ttl">{{ item.ttl }}</h2>
-        <p class="card-list__txt">{{ item.txt }}</p>
-      </div>
-      <div class="card-list__label-wrapper">
-        <div
-          v-for="(label, index) in item.labels"
-          :key="index"
-          class="card-list__label">
-          {{ label }}
+      <a href="/">
+        <div class="card-list__thumb">
+          <img
+            :src="item.img"
+            :alt="item.title">
         </div>
-      </div>
+        <div class="card-list__main">
+          <h2 class="card-list__ttl">{{ item.ttl }}</h2>
+          <p class="card-list__txt">{{ item.txt }}</p>
+        </div>
+        <div class="card-list__label-wrapper">
+          <div
+            v-for="(label, index) in item.labels"
+            :key="index"
+            class="card-list__label">
+            {{ label }}
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </template>
@@ -30,7 +32,7 @@ import { mapGetters } from 'vuex'
 import setting from '@/setting.js'
 
 export default {
-  name: '',
+  name: 'CardList',
   components: {
     setting,
     mapGetters
@@ -100,9 +102,17 @@ export default {
   grid-auto-rows: minmax(60px, auto);
   grid-template-columns: repeat(3, 1fr);
 
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   &__inner {
     box-sizing: border-box;
     cursor: pointer !important;
+
+    a {
+      display: block;
+    }
   }
 
   &__thumb {
